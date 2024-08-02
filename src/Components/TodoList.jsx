@@ -8,8 +8,8 @@ const TodoList = () => {
     const [listInputs, setListInputs] = useState({});
 
     handleAddTodo = () =>{
-        if (headingInput.trim) !== ''){
-            setTodos([...todos, {heading: headingInput. lists: []}]);
+        if (headingInput.trim !== ''){
+            setTodos([...todos, {heading: headingInput, lists: []}]);
             setHeadingInput('');
         }
     }
@@ -34,9 +34,11 @@ const TodoList = () => {
       <div className="todo_main">
         {todos.map((todo, index) =>(
             <div key={index} className='todo-card'>
+                <div className='heading_todo'>
                 <h3>{todo.heading}</h3>{/*Display the heading here*/}
                 <button className='delete-button-heading'>Delete heading </button>
                  </div> 
+                 </div>
         ))
 
         }
