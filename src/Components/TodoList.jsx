@@ -7,12 +7,12 @@ const TodoList = () => {
     const [headingInput, setHeadingInput] = useState('');
     const [listInputs, setListInputs] = useState({});
 
-    handleAddTodo = () =>{
+    const handleAddTodo = () =>{
         if (headingInput.trim !== ''){
             setTodos([...todos, {heading: headingInput, lists: []}]);
-            setHeadingInput('');
+            setHeadingInput('')
         }
-    }
+    };
   
 
   return (
@@ -26,11 +26,12 @@ const TodoList = () => {
             placeholder="Enter heading"
             value={headingInput}
             onChange={(e) =>{setHeadingInput(e.target.value);}} // Add onChange event handler to update headingInput state
-            
-          />
+            />
+
           <button className="add-list-button" onClick={handleAddTodo}>Add Heading</button>
         </div>
       </div>
+
       <div className="todo_main">
         {todos.map((todo, index) =>(
             <div key={index} className='todo-card'>
@@ -41,7 +42,7 @@ const TodoList = () => {
                  </div>
         ))
 
-        }
+        };
       </div>
     </>
   );
